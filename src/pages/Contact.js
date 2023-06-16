@@ -1,9 +1,15 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 
 const Contact = () => {
+  const queryString = useLocation().search;
+  console.log(queryString);
+
+  const queryParams = new URLSearchParams(queryString);
+  const name = queryParams.get('name');
   return (
     <div>
-      <h2>Contact</h2>
+      <h2>Hey {name}, Contact us here...</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
